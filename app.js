@@ -6,14 +6,14 @@ angular.module('MyApp', [])
 
 LunchCheck.$inject = ['$scope'];
 function LunchCheck($scope) {
-var countC = 0;
 
 $scope.checkIfTooMuch = function () {
   if (!$scope.lunchMenu){
     $scope.sayMessage = "Enter menu";
-  } else {
-   countC = $scope.lunchMenu.split(',').length;
+    return;
   }
+  var countC = $scope.lunchMenu.split(',').length;
+
 
   if (countC == 0) {
     $scope.sayMessage = "Enter menu";
